@@ -19,7 +19,7 @@ version 1.40, 5/2/2018
 version 1.39, 27/5/2015
 =======================
   o raw LaTeX with (*l ... *)
-    (patch from Judicaël Courant)
+    (patch from JudicaÃ«l Courant)
 
 version 1.38, 9/5/2012
 ======================
@@ -143,11 +143,11 @@ version 0.5, 29/9/99
   o escape sequences ([...]) are no more active inside mathematics ($...$)
   o bootstrap is now completed (make bootstrap)
   o interfaces are no more inserted automatically before implementations
-    (patch from François Pottier)
+    (patch from FranÃ§ois Pottier)
 
 version 0.4, 25/06/99
 =====================
-  o better handling of spaces before sections (thanks to François Pottier)
+  o better handling of spaces before sections (thanks to FranÃ§ois Pottier)
   o right-justified comments with (*r ... *)
   o misinterpretation of -- in strings fixes
   o better adequacy to caml tokens (and better pretty-printing)
@@ -177,7 +177,7 @@ version 0.3, 17/06/99 (first official release)
 
 version 0.26, 02/06/99
 ======================
-  o ocamlweb.sty: greatly improved by Claude Marché
+  o ocamlweb.sty: greatly improved by Claude MarchÃ©
   o various command line options: --no-index, --no-web, --latex-option,
     --impl, --intf, --tex
   o two styles: WEB and LaTeX

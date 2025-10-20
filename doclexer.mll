@@ -1,6 +1,6 @@
 (*
  * ocamlweb - A WEB-like tool for ocaml
- * Copyright (C) 1999-2001 Jean-Christophe FILLIÂTRE and Claude MARCHÉ
+ * Copyright (C) 1999-2001 Jean-Christophe FILLIÃ‚TRE and Claude MARCHÃ‰
  *
  * This software is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -779,7 +779,7 @@ and in_string = parse
 
 type caml_file = { caml_filename : string; caml_module : string }
 
-let module_name f = String.capitalize (Filename.basename f)
+let module_name f = String.capitalize_ascii (Filename.basename f)
 
 let make_caml_file f =
   { caml_filename = f;

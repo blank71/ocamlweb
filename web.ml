@@ -1,6 +1,6 @@
 (*
  * ocamlweb - A WEB-like tool for ocaml
- * Copyright (C) 1999-2001 Jean-Christophe FILLIÂTRE and Claude MARCHÉ
+ * Copyright (C) 1999-2001 Jean-Christophe FILLIÃ‚TRE and Claude MARCHÃ‰
  *
  * This software is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -227,7 +227,7 @@ let find_where w =
     and then we use Caml's comparison.
  *)
 
-let norm_char c = match Char.uppercase c with
+let norm_char c = match Char.uppercase_ascii c with
   | '\192'..'\198' -> 'A'
   | '\199' -> 'C'
   | '\200'..'\203' -> 'E'
@@ -264,7 +264,7 @@ module Idset = Set.Make(struct type t = index_entry let compare = compare end)
 let all_entries () =
   let s = Idmap.fold (fun x _ s -> Idset.add x s) !used Idset.empty in
   let s = Idmap.fold (fun x _ s -> Idset.add x s) !defined s in
-  Sort.list order_entry (Idset.elements s)
+  List.sort (fun e1 e2 -> if order_entry e1 e2 then -1 else if order_entry e2 e1 then 1 else 0) (Idset.elements s)
 
 
 (*s When we are in \LaTeX\ style, an index entry only consists in two lists
@@ -324,7 +324,7 @@ let list_in_table id t =
   try
     let l = Whereset.elements (Idmap.find id t) in
     let l = map_succeed_nf find_where l in
-    let l = Sort.list (fun x x' -> snd x < snd x') l in
+    let l = List.sort (fun x x' -> compare (snd x) (snd x')) l in
     uniquize l
   with Not_found ->
     []

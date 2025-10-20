@@ -1,6 +1,6 @@
 (*
  * ocamlweb - A WEB-like tool for ocaml
- * Copyright (C) 1999-2001 Jean-Christophe FILLIÂTRE and Claude MARCHÉ
+ * Copyright (C) 1999-2001 Jean-Christophe FILLIÃ‚TRE and Claude MARCHÃ‰
  *
  * This software is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -42,15 +42,15 @@ let quiet = ref false
 
 let short = ref false
 
-let output_char c = Pervasives.output_char !out_channel c
+let output_char c = Stdlib.output_char !out_channel c
 
-let output_string s = Pervasives.output_string !out_channel s
+let output_string s = Stdlib.output_string !out_channel s
 
 let output_file f =
   let ch = open_in f in
   try
     while true do
-      Pervasives.output_char !out_channel (input_char ch)
+      Stdlib.output_char !out_channel (input_char ch)
     done
   with End_of_file -> close_in ch
 
